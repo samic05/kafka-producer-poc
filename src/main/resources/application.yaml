@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: "diplomado-kafka-producer"
+
+application:
+  kafka:
+    host: ${KAFKA_HOST:localhost}
+    port: ${KAFKA_PORT:9092}

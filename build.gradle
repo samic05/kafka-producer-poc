@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.2-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.1.5'
+	id "com.diffplug.spotless" version "7.0.0.BETA1"
 }
 
 group = 'co.edu.javerianacali.educacioncontinua'
@@ -33,7 +34,15 @@ dependencies {
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
+spotless {
+	java {
+		googleJavaFormat()
+	}
+}
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jar {
+	enabled = false
 }
